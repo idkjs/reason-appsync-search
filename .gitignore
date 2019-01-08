@@ -6,3 +6,4 @@ npm-debug.log
 /src/**/*.bs.js
 /node_modules/
 /.cache/
+/dist

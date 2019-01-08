@@ -1,5 +1,5 @@
 
-# Implementing Search in GraphQL
+# Implementing Search in GraphQL, AWS, ReasonReact, ParcelJS
 
 In this tutorial, we’ll learn how to implement GraphQL search in a React Application using AWS AppSync & React Apollo.
 > The final code for this tutorial is located [here](https://github.com/dabit3/graphql-search).
