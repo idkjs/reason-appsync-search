@@ -1,6 +1,6 @@
 ReactDOMRe.renderToElementWithId(
   <ReasonApollo.Provider client=Client.instance>
-    <App message="Welcome to Search" />
+    <App />
   </ReasonApollo.Provider>,
   "root",
 );

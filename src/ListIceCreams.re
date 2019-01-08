@@ -1,3 +1,7 @@
+let app = ReactDOMRe.Style.make(
+    ~textAlign="center",
+    ()
+);
 let container = ReactDOMRe.Style.make(
     ~padding="10px",
     ~borderBottom="1px solid #ddd",
@@ -11,7 +15,7 @@ let description = ReactDOMRe.Style.make(
     ~fontSize="15px",
     ~color="rgba(0, 0, 0, .5)",
 );
-let input = ReactDOMRe.Style.make(
+let inputStyle = ReactDOMRe.Style.make(
     ~height="40px",
     ~width="300px",
     ~padding="7px",
@@ -57,7 +61,8 @@ let make = (_children) => {
                | Some(items) =>
                  let items = items->Belt.Array.keepMap(item => item);
 
-                 <div>
+                 <div style=app>
+                <div> {ReasonReact.string("SearchBox")} </div>
                 { items
                  |> Array.map(item =>
                       <div key={item.id} style=container>

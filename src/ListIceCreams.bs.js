@@ -12,6 +12,10 @@ var Caml_option = require("bs-platform/lib/js/caml_option.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 var ReasonApollo = require("reason-apollo/src/ReasonApollo.bs.js");
 
+var app = {
+  textAlign: "center"
+};
+
 var container = {
   borderBottom: "1px solid #ddd",
   padding: "10px"
@@ -1418,7 +1422,7 @@ function description(param, param$1, param$2, param$3, param$4, param$5, param$6
     });
 }
 
-var input = {
+var inputStyle = {
   fontSize: "15px",
   height: "40px",
   outline: "none",
@@ -1608,7 +1612,9 @@ function make$1(_children) {
                                       var items$1 = Belt_Array.keepMap(items, (function (item) {
                                               return item;
                                             }));
-                                      return React.createElement("div", undefined, $$Array.map((function (item) {
+                                      return React.createElement("div", {
+                                                  style: app
+                                                }, React.createElement("div", undefined, "SearchBox"), $$Array.map((function (item) {
                                                         return React.createElement("div", {
                                                                     key: item[/* id */0],
                                                                     style: container
@@ -1634,10 +1640,11 @@ function make$1(_children) {
         ];
 }
 
+exports.app = app;
 exports.container = container;
 exports.title = title;
 exports.description = description;
-exports.input = input;
+exports.inputStyle = inputStyle;
 exports.ListIceCreams = ListIceCreams;
 exports.ListIceCreamsQuery = ListIceCreamsQuery;
 exports.component = component;
