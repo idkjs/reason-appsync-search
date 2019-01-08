@@ -7,11 +7,11 @@ var React = require("react");
 var $$String = require("bs-platform/lib/js/string.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 var Utils$ReactTemplate = require("./Utils.bs.js");
-var Search$ReactTemplate = require("./Search.bs.js");
-var ListIceCreams$ReactTemplate = require("./ListIceCreams.bs.js");
-var SearchIceCreams$ReactTemplate = require("./SearchIceCreams.bs.js");
+var Search$ReactTemplate = require("./components/Search.bs.js");
+var ListIceCreams$ReactTemplate = require("./components/ListIceCreams.bs.js");
+var SearchIceCreams$ReactTemplate = require("./components/SearchIceCreams.bs.js");
 
-((require('./App.css')));
+((require('./styles/App.css')));
 
 function changeSearch(send) {
   var update = Utils$ReactTemplate.Debounce[/* make */0](250, undefined, (function (newValue) {

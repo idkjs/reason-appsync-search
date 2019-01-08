@@ -1,4 +1,4 @@
-[%bs.raw {|require('./App.css')|}];
+[%bs.raw {|require('./styles/App.css')|}];
 
 type state = {search: string};
 

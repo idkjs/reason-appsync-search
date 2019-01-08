@@ -1,5 +1,5 @@
 
-[%bs.raw {|require('./index.css')|}];
+[%bs.raw {|require('./styles/index.css')|}];
 
 ReactDOMRe.renderToElementWithId(
   <ReasonApollo.Provider client=Client.instance>
