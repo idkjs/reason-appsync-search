@@ -1,15 +1,5 @@
-/* module Handler = {
-  let onChange = evt => (evt |> ReactEvent.Form.target)##value;
-}; */
-let inputStyle =
-  ReactDOMRe.Style.make(
-    ~height="40px",
-    ~width="300px",
-    ~padding="7px",
-    ~fontSize="15px",
-    ~outline="none",
-    (),
-  );
+open Styles;
+
 type state = {value: string};
 
 type action =

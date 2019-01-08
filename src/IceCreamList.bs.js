@@ -4,7 +4,7 @@
 var $$Array = require("bs-platform/lib/js/array.js");
 var React = require("react");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
-var IceCream$ReactTemplate = require("./IceCream.bs.js");
+var Styles$ReactTemplate = require("./Styles.bs.js");
 
 function str(prim) {
   return prim;
@@ -24,15 +24,18 @@ function make(items, _children) {
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (_self) {
-              return React.createElement("ul", {
-                          style: {
-                            listStyleType: "none"
-                          }
+              return React.createElement("div", {
+                          style: Styles$ReactTemplate.app
                         }, $$Array.map((function (item) {
-                                return React.createElement("li", {
-                                            key: item[/* id */0]
-                                          }, item[/* name */1] + (" | " + item[/* description */2]));
-                              }), $$Array.map(IceCream$ReactTemplate.iceCreamFromJs, items)));
+                                return React.createElement("div", {
+                                            key: item[/* id */0],
+                                            style: Styles$ReactTemplate.container
+                                          }, React.createElement("p", {
+                                                style: Styles$ReactTemplate.title
+                                              }, item[/* name */1]), React.createElement("p", {
+                                                style: Styles$ReactTemplate.title
+                                              }, item[/* description */2]));
+                              }), items));
             }),
           /* initialState */component[/* initialState */10],
           /* retainedProps */component[/* retainedProps */11],

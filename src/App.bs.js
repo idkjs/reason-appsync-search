@@ -8,8 +8,8 @@ var $$String = require("bs-platform/lib/js/string.js");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
 var Utils$ReactTemplate = require("./Utils.bs.js");
 var Search$ReactTemplate = require("./Search.bs.js");
-var SearchQuery$ReactTemplate = require("./SearchQuery.bs.js");
 var ListIceCreams$ReactTemplate = require("./ListIceCreams.bs.js");
+var SearchIceCreams$ReactTemplate = require("./SearchIceCreams.bs.js");
 
 ((require('./App.css')));
 
@@ -45,7 +45,7 @@ function make(_children) {
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (param) {
               var search = param[/* state */1][/* search */0];
-              var tmp = search === "" ? ReasonReact.element(undefined, undefined, ListIceCreams$ReactTemplate.make(/* array */[])) : ReasonReact.element(undefined, undefined, SearchQuery$ReactTemplate.make(search, /* array */[]));
+              var tmp = search === "" ? ReasonReact.element(undefined, undefined, ListIceCreams$ReactTemplate.make(/* array */[])) : ReasonReact.element(undefined, undefined, SearchIceCreams$ReactTemplate.make(search, /* array */[]));
               return React.createElement("div", {
                           className: "App"
                         }, ReasonReact.element(undefined, undefined, Search$ReactTemplate.make(undefined, changeSearch(param[/* send */3]), /* array */[])), tmp);

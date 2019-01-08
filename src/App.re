@@ -29,7 +29,7 @@ let make = (_children) => {
       {
         switch(state.search){
         | ("") => <ListIceCreams />
-        | (search) => <SearchQuery searchQuery=search />
+        | (search) => <SearchIceCreams searchQuery=search />
         }
       }
     </div>,

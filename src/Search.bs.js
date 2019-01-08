@@ -5,14 +5,7 @@ var Block = require("bs-platform/lib/js/block.js");
 var Curry = require("bs-platform/lib/js/curry.js");
 var React = require("react");
 var ReasonReact = require("reason-react/src/ReasonReact.js");
-
-var inputStyle = {
-  fontSize: "15px",
-  height: "40px",
-  outline: "none",
-  padding: "7px",
-  width: "300px"
-};
+var Styles$ReactTemplate = require("./Styles.bs.js");
 
 var component = ReasonReact.reducerComponent("Search");
 
@@ -38,7 +31,7 @@ function make($staropt$star, $staropt$star$1, _children) {
           /* render */(function (param) {
               var send = param[/* send */3];
               return React.createElement("div", undefined, React.createElement("input", {
-                              style: inputStyle,
+                              style: Styles$ReactTemplate.inputStyle,
                               placeholder: "Search for ice cream",
                               value: param[/* state */1][/* value */0],
                               onChange: (function (e) {
@@ -57,7 +50,6 @@ function make($staropt$star, $staropt$star$1, _children) {
         ];
 }
 
-exports.inputStyle = inputStyle;
 exports.component = component;
 exports.reducer = reducer;
 exports.make = make;

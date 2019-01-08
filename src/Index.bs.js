@@ -7,6 +7,8 @@ var ApolloProvider = require("reason-apollo/src/ApolloProvider.bs.js");
 var App$ReactTemplate = require("./App.bs.js");
 var Client$ReactTemplate = require("./AWS/Client.bs.js");
 
+((require('./index.css')));
+
 ReactDOMRe.renderToElementWithId(ReasonReact.element(undefined, undefined, ApolloProvider.make(Client$ReactTemplate.instance, /* array */[ReasonReact.element(undefined, undefined, App$ReactTemplate.make(/* array */[]))])), "root");
 
 var match = module.hot;
