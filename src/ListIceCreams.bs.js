@@ -1587,7 +1587,6 @@ function make$1(_children) {
           /* willUpdate */component[/* willUpdate */7],
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (param) {
-              make(/* () */0);
               return ReasonReact.element(undefined, undefined, Curry.app(ListIceCreamsQuery[/* make */3], [
                               undefined,
                               undefined,
@@ -1609,11 +1608,16 @@ function make$1(_children) {
                                       var items$1 = Belt_Array.keepMap(items, (function (item) {
                                               return item;
                                             }));
-                                      return React.createElement("div", undefined, React.createElement("ul", undefined, $$Array.map((function (item) {
-                                                            return React.createElement("li", {
-                                                                        key: item[/* id */0]
-                                                                      }, React.createElement("p", undefined, item[/* name */1]));
-                                                          }), items$1)));
+                                      return React.createElement("div", undefined, $$Array.map((function (item) {
+                                                        return React.createElement("div", {
+                                                                    key: item[/* id */0],
+                                                                    style: container
+                                                                  }, React.createElement("p", {
+                                                                        style: title
+                                                                      }, item[/* name */1]), React.createElement("p", {
+                                                                        style: title
+                                                                      }, item[/* description */2]));
+                                                      }), items$1));
                                     } else {
                                       return React.createElement("div", undefined, "Nothing to Show");
                                     }

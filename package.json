@@ -6,7 +6,7 @@
     "dev": "npm-run-all --parallel start serve",
     "start": "bsb -make-world -w",
     "serve": "yarn parcel index.html",
-    "clean": "bsb -clean-world"
+    "clean": "bsb -clean-world && rm -rf /lib /dist /.cache"
   },
   "keywords": [
     "BuckleScript"

@@ -42,7 +42,7 @@ let component = ReasonReact.statelessComponent("ListIceCreams");
 let make = (_children) => {
   ...component,
   render: _ => {
-    let listIceCreamsQuery = ListIceCreams.make(());
+    /* let listIceCreamsQuery = ListIceCreams.make(()); */
     <ListIceCreamsQuery>
       ...{
            ({result}) =>
@@ -56,18 +56,17 @@ let make = (_children) => {
                | None => <div> {ReasonReact.string("Nothing to Show")} </div>
                | Some(items) =>
                  let items = items->Belt.Array.keepMap(item => item);
+
                  <div>
-                 <ul>
                 { items
                  |> Array.map(item =>
-                      <li key={item.id}>
-                        <p> {ReasonReact.string(item.name)} </p>
-                      </li>
+                      <div key={item.id} style=container>
+                        <p style=title> {ReasonReact.string(item.name)} </p>
+                        <p style=title> {ReasonReact.string(item.description)} </p>
+                      </div>
                       )
                  |> ReasonReact.array
                  }
-                 </ul>
-
                  </div>
                }
              }
@@ -76,19 +75,3 @@ let make = (_children) => {
     </ListIceCreamsQuery>;
   },
 };
- /*| Some(items) =>
-                 let items = items->Belt.Array.keepMap(item => item);
-                 items
-
-
-               <div> {
-                /* Handles a deeply nested optional response */
-                {ReasonReact.string("Data Logged?")}
-                response##listIceCreams
-
-                /* response##data
-                -> Belt.Option.flatMap(user => user##device)
-                -> Belt.Option.flatMap(device => device##brand)
-                -> Belt.Option.mapWithDefault("", brand => brand##name) */
-               } </div> */
-               /* } */

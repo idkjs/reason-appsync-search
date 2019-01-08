@@ -31,7 +31,7 @@ function make(items, _children) {
                         }, $$Array.map((function (item) {
                                 return React.createElement("li", {
                                             key: item[/* id */0]
-                                          }, item[/* name */1] + (" | " + (item[/* description */2] + (" | " + String(item[/* rating */3])))));
+                                          }, item[/* name */1] + (" | " + item[/* description */2]));
                               }), $$Array.map(IceCream$ReactTemplate.iceCreamFromJs, items)));
             }),
           /* initialState */component[/* initialState */10],
