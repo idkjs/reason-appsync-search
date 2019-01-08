@@ -8,4 +8,4 @@ npm-debug.log
 /node_modules/
 /.cache/
 /dist
-/.graphql_ppx-cache
+/.graphql_ppx_cache
