@@ -1639,7 +1639,7 @@ bs-platform@^5.2.1:
   resolved "https://registry.yarnpkg.com/bs-platform/-/bs-platform-5.2.1.tgz#3f76f6d4f4c7255296375a8104c8be332770b691"
   integrity sha512-3ISP+RBC/NYILiJnphCY0W3RTYpQ11JGa2dBBLVug5fpFZ0qtSaL3ZplD8MyjNeXX2bC7xgrWfgBSn8Tc9om7Q==
 
-bs-platform@bsansouci/bsb-native#3.2.0:
+"bs-platform@github:bsansouci/bsb-native#3.2.0":
   version "3.2.0"
   resolved "https://codeload.github.com/bsansouci/bsb-native/tar.gz/84604c9f6a5611eed68372efdb575c00a3e72813"
   dependencies:
@@ -2972,11 +2972,6 @@ gauge@~2.7.3:
     strip-ansi "^3.0.1"
     wide-align "^1.1.0"
 
-gentype@^3.4.2:
-  version "3.4.2"
-  resolved "https://registry.yarnpkg.com/gentype/-/gentype-3.4.2.tgz#51ff8e2410dbce6eb617d4af32786c82c165d180"
-  integrity sha512-0VjtYFR2EZgLYRAHi9eLVoTWQqBksBmQTccMiNEo1FUTjMxe7KaD4nViFKKF6uWYsrDLj6IS4vtq5v5VyhCBmQ==
-
 get-caller-file@^1.0.1:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.3.tgz#f978fa4c90d1dfe7ff2d6beda2a515e713bdcf4a"
@@ -3002,7 +2997,7 @@ get-value@^2.0.3, get-value@^2.0.6:
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=
 
-get_in_ppx@^1.0.2:
+get_in_ppx@1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get_in_ppx/-/get_in_ppx-1.0.2.tgz#3c5312167584b88ea4ec3adf0e770ff8decc8e4c"
   integrity sha512-/metJwoWYS0ScPpetIu84ZCj2bvbyLX4Sj4PYqhyr8xYW0E6ju8rXXWL4pbQeOtftAnsP7pYRxsOta6r6q1trA==
