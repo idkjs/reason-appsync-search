@@ -12,14 +12,14 @@
   "namespace": true,
   "bs-dependencies": [
     "reason-react",
-    "reason-apollo"
+    "reason-apollo",
+    "reason-apollo-hooks"
   ],
   "reason": {
     "react-jsx": 3
   },
   "ppx-flags": [
-    "graphql_ppx/ppx",
-    "get_in_ppx/ppx"
+    "@baransu/graphql_ppx_re/ppx6"
 ],
   "refmt": 3
 }

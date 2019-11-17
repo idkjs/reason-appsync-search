@@ -1,19 +1,4 @@
 
-// open IceCream;
-// module ListIceCreams = [%graphql
-//   {|
-//   query listAll {
-//   listIceCreams {
-//     items @bsRecord{
-//       name
-//       description
-//       id
-//       rating
-//     }
-//   }
-// }
-// |}
-// ];
 
 module ListIceCreamsQuery = ReasonApollo.CreateQuery(Queries.ListIceCreams);
 
@@ -26,14 +11,17 @@ let make = () => {
              | Loading => <div> {ReasonReact.string("Searching")} </div>
              | Error(error) =>
                <div> {ReasonReact.string(error##message)} </div>
-             | Data(response) => {
-              let items = [%get_in response##listIceCreams#??items];
-              switch (items) {
-               | None => <div> {ReasonReact.string("Nothing to Show")} </div>
-               | Some(items) =>
-                 let items = items->Belt.Array.keepMap(item => item);
-                 <IceCreamList screen="list" items />
-               }
+             | Data(data) => {
+               let data =
+                 data##listIceCreams
+                 ->Belt.Option.flatMap(listItems => listItems##items)
+                 ->Belt.Option.getWithDefault([||]);
+               Js.log2("data", data);
+               let items =
+                 data
+                 ->Belt.Array.keep(Belt.Option.isSome)
+                 ->Belt.Array.map(Belt.Option.getExn);
+               <IceCreamList screen="list no hooks" items />;
              }
          }
       }

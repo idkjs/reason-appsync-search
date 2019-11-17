@@ -7,7 +7,7 @@ type actions =
 
 let reducer = (_state, action) =>
   switch (action) {
-  | ChangeSearch(newValue) => {search: newValue->String.lowercase}
+  | ChangeSearch(newValue) => {search: newValue->String.lowercase_ascii}
   };
 /* Here we have to pass an empty string with a space bewteen the parens. "" will through a graphql error that string can not be empty. */
 let initialState = {search: ""};
@@ -22,13 +22,11 @@ let make = () => {
     newValue => update |> call(newValue);
   };
   <div className="App">
-    <Search initialValue=state.search onChange={changeSearch()}/>
-
-    {
-      switch (state.search) {
-      | "" => <ListIceCreams />
-      | search => <SearchIceCreams searchQuery=search />
-      }
-    }
+    <Search initialValue={state.search} onChange={changeSearch()} />
+    {switch (state.search) {
+     | "" => <ListIceCreamsHooks />
+    //  | "" => <ListIceCreams />
+     | search => <SearchIceCreamsHooks searchQuery=search />
+     }}
   </div>;
 };

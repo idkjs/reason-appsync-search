@@ -2,7 +2,9 @@
 
 ReactDOMRe.renderToElementWithId(
   <ReasonApollo.Provider client=Client.instance>
-    <App />
+    <ReasonApolloHooks.ApolloProvider client=Client.instance>
+      <App />
+    </ReasonApolloHooks.ApolloProvider>
   </ReasonApollo.Provider>,
   "root",
 );
