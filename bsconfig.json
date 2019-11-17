@@ -15,19 +15,11 @@
     "reason-apollo"
   ],
   "reason": {
-    "react-jsx": 2
+    "react-jsx": 3
   },
   "ppx-flags": [
     "graphql_ppx/ppx",
     "get_in_ppx/ppx"
 ],
-"gentypeconfig": {
-  "language": "untyped",
-  "shims": {},
-  "debug": {
-    "all": false,
-    "basic": false
-  }
-},
   "refmt": 3
 }

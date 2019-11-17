@@ -1,27 +1,24 @@
 
-open IceCream;
-module ListIceCreams = [%graphql
-  {|
-  query listAll {
-  listIceCreams {
-    items @bsRecord{
-      name
-      description
-      id
-      rating
-    }
-  }
-}
-|}
-];
+// open IceCream;
+// module ListIceCreams = [%graphql
+//   {|
+//   query listAll {
+//   listIceCreams {
+//     items @bsRecord{
+//       name
+//       description
+//       id
+//       rating
+//     }
+//   }
+// }
+// |}
+// ];
 
-module ListIceCreamsQuery = ReasonApollo.CreateQuery(ListIceCreams);
+module ListIceCreamsQuery = ReasonApollo.CreateQuery(Queries.ListIceCreams);
 
-let component = ReasonReact.statelessComponent("ListIceCreams");
-
-let make = (_children) => {
-  ...component,
-  render: _ => {
+[@react.component]
+let make = () => {
     <ListIceCreamsQuery>
       ...{
            ({result}) =>
@@ -35,11 +32,10 @@ let make = (_children) => {
                | None => <div> {ReasonReact.string("Nothing to Show")} </div>
                | Some(items) =>
                  let items = items->Belt.Array.keepMap(item => item);
-                 <IceCreamList items />
+                 <IceCreamList screen="list" items />
                }
              }
          }
       }
     </ListIceCreamsQuery>;
-  },
 };

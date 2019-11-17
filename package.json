@@ -9,28 +9,29 @@
     "clean": "bsb -clean-world && rm -rf /lib /dist /.cache"
   },
   "keywords": [
-    "BuckleScript", "Reason", "ReasonReact","AWS","Appsync","ParcelJS","GraphQL"
+    "BuckleScript", "Reason", "ReasonReact","AWS","Appsync","ParcelJS","GraphQL","ReasonApollo"
   ],
   "author": "Alain Armand",
   "license": "MIT",
   "dependencies": {
-    "aws-amplify": "^1.1.18",
-    "aws-appsync": "^1.7.0",
-    "aws-appsync-react": "^1.2.5",
-    "graphql-tag": "^2.10.0",
-    "lodash": "^4.17.11",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0",
-    "reason-apollo": "^0.15.1"
+    "aws-appsync-auth-link": "^2.0.1",
+    "aws-appsync-subscription-link": "^2.0.1",
+    "lodash.debounce": "4.0.8",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "reason-apollo": "git+https://github.com/apollographql/reason-apollo.git",
+    "aws-appsync": "^3.0.2",
+    "aws-appsync-react": "^3.0.2",
+    "graphql-tag": "^2.10.1",
+    "reason-react": ">=0.7.0"
   },
   "devDependencies": {
-    "bs-platform": "^4.0.17",
+    "bs-platform": "^5.2.1",
     "bsb-js": "^1.1.7",
-    "gentype": "^1.9.0",
+    "gentype": "^3.4.2",
     "get_in_ppx": "^1.0.2",
     "graphql_ppx": "^0.2.8",
     "npm-run-all": "^4.1.5",
-    "parcel-bundler": "^1.11.0",
-    "reason-react": ">=0.5.3"
+    "parcel-bundler": "^1.12.4"
   }
 }

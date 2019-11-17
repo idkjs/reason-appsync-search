@@ -5,32 +5,30 @@ type state = {search: string};
 type actions =
   | ChangeSearch(string);
 
-let changeSearch = send => {
-  open Utils.Debounce;
-  let update = make(newValue => send(ChangeSearch(newValue)), ~wait=250);
-  newValue => update |> call(newValue);
-};
-
-let reducer = (action, _state) =>
-  switch action {
-  | ChangeSearch(newValue) => ReasonReact.Update({search: (newValue->String.lowercase)})
+let reducer = (_state, action) =>
+  switch (action) {
+  | ChangeSearch(newValue) => {search: newValue->String.lowercase}
   };
+/* Here we have to pass an empty string with a space bewteen the parens. "" will through a graphql error that string can not be empty. */
+let initialState = {search: ""};
+[@react.component]
+let make = () => {
+  let (state, dispatch) = React.useReducer(reducer, initialState);
 
-let initialState = () => {search: ""};
-let component = ReasonReact.reducerComponent(__MODULE__);
+  let changeSearch = _ => {
+    open Utils.Debounce;
+    let update =
+      make(newValue => dispatch(ChangeSearch(newValue)), ~wait=250);
+    newValue => update |> call(newValue);
+  };
+  <div className="App">
+    <Search initialValue=state.search onChange={changeSearch()}/>
 
-let make = (_children) => {
-  ...component,
-  initialState,
-  reducer,
-  render:({state,send}) =>
-    <div className="App">
-      <Search onChange=(changeSearch(send)) />
-      {
-        switch(state.search){
-        | ("") => <ListIceCreams />
-        | (search) => <SearchIceCreams searchQuery=search />
-        }
+    {
+      switch (state.search) {
+      | "" => <ListIceCreams />
+      | search => <SearchIceCreams searchQuery=search />
       }
-    </div>,
+    }
+  </div>;
 };
