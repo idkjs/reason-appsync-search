@@ -10,3 +10,4 @@ npm-debug.log
 /.cache/
 /dist
 /.graphql_ppx_cache
+src/aws-exports.js
